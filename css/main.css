@@ -6,19 +6,20 @@
 
 .wrapper {
   height: 100vh;
-  display: flex;
+  
   background-color: #71db88;
 }
 
 .memory-game {
   width: 700px;
   margin: auto;
-  /* flex-direction: row; */
-  /* flex-wrap: wrap; */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .memory-card {
-
+  width: 25%;
+  height: 33.333%;
 }
 
 .memory-card__front-img {
