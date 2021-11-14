@@ -13,6 +13,18 @@
 .memory-game {
   width: 700px;
   margin: auto;
-  flex-direction: row;
-  flex-wrap: wrap;
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+}
+
+.memory-card {
+
+}
+
+.memory-card__front-img {
+
+}
+
+.memory-card__back-img {
+  
 }
