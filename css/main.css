@@ -1,31 +1,56 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .wrapper {
-  height: 100vh;
-  
-  background-color: #71db88;
+    display: flex;
+    height: 100vh;
+    background-color: #71db88;
 }
 
 .memory-game {
-  width: 700px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
+    width: 700px;
+    height: 700px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 3px solid #36a88c; */
+    /* perspective: 1000px; */
 }
 
 .memory-card {
-  width: 25%;
-  height: 33.333%;
+    width: calc(25% - 10px);
+    height: calc( 33.333% - 10px);
+    position: relative;
+    margin: 5px;
+    transition: transform .3s;
+    /* transition: scale .3s; */
+    transform-style: preserve-3d;
 }
 
-.memory-card__front-img {
+.memory-card:active {
+    transform: scale(.95);
+    transition: transform .3s;
+}
 
+.memory-card.rotate {
+    transform: rotateY(180deg);
+    transition: transform .3s;
+}
+
+.memory-card__front-img,
+.memory-card__back-img {
+    position: absolute;
+    /* border: 2px dotted #000000; */
+    background: #10b51b;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    backface-visibility: hidden;
 }
 
 .memory-card__back-img {
-  
+    transform: rotateY(180deg);
 }
