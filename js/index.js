@@ -1,5 +1,4 @@
 const cards = document.querySelectorAll('.memory-card');
-// const el = document.querySelector('#user');
 
 let isRotate = false;
 let lockCards = false;
@@ -12,27 +11,34 @@ function cardClicked() {
     this.classList.add('rotate');
 
     if (!isRotate) {
+        // click one
         isRotate = true;
         firstCard = this;
+
+        return;
+    }
+    //  click two
+    isRotate = false;
+    secondCard = this;
+
+    checkMatching();
+}
+
+function checkMatching() {
+    if (firstCard.dataset.webimg === secondCard.dataset.webimg) {
+        // is matching!
+        firstCard.removeEventListener('click', cardClicked);
+        secondCard.removeEventListener('click', cardClicked);
     } else {
-        isRotate = false;
-        secondCard = this;
+        // is no mathing
+        lockCards = true;
 
-        console.log(firstCard.dataset.webimg);
-        console.log(secondCard.dataset.webimg);
+        setTimeout(() => {
+            lockCards = false;
 
-        if (firstCard.dataset.webimg === secondCard.dataset.webimg) {
-            // is matching!
-            firstCard.removeEventListener('click', cardClicked);
-            secondCard.removeEventListener('click', cardClicked);
-        } else {
-            // is no mathing
-            setTimeout(() => {
-                firstCard.classList.remove('rotate');
-                secondCard.classList.remove('rotate');
-            }, 1000);
-
-        }
+            firstCard.classList.remove('rotate');
+            secondCard.classList.remove('rotate');
+        }, 1000);
     }
 }
 
