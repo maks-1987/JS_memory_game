@@ -17,8 +17,7 @@ function cardClicked() {
 
         return;
     }
-    //  click two
-    isRotate = false;
+    // click two
     secondCard = this;
 
     checkMatching();
@@ -29,17 +28,24 @@ function checkMatching() {
         // is matching!
         firstCard.removeEventListener('click', cardClicked);
         secondCard.removeEventListener('click', cardClicked);
+
+        resetCards();
     } else {
         // is no mathing
         lockCards = true;
 
         setTimeout(() => {
-            lockCards = false;
-
             firstCard.classList.remove('rotate');
             secondCard.classList.remove('rotate');
+
+            resetCards();
         }, 1000);
     }
+}
+
+function resetCards() {
+    [isRotate, lockCards] = [false, false];
+    [firstCard, secondCard] = [null, null];
 }
 
 cards.forEach(card => card.addEventListener('click', cardClicked));
