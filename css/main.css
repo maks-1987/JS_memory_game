@@ -4,20 +4,34 @@
     box-sizing: border-box;
 }
 
+body {
+    /* height: 100%; */
+    /* overflow: hidden; */
+}
+
 .wrapper {
     display: flex;
     height: 100vh;
     background-color: #71db88;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+h1 {
+    flex: 1 0 99.999%;
+    text-align: center;
+    align-self: center;
+    margin-bottom: 10px;
+    font-size: 24px;
 }
 
 .memory-game {
     width: 700px;
     height: 700px;
-    margin: auto;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
-    /* border: 3px solid #36a88c; */
 }
 
 .memory-card {
@@ -25,10 +39,9 @@
     height: calc( 33.333% - 10px);
     position: relative;
     margin: 5px;
-    transition: transform .3s;
+    transition: transform .3s, scale .3s;
     cursor: pointer;
     transform-style: preserve-3d;
-    /* transition: scale .3s; */
 }
 
 .memory-card:active {
@@ -54,4 +67,37 @@
 
 .memory-card__back-img {
     transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 700px) {
+    .memory-game {
+        height: 510px;
+    }
+}
+
+@media screen and (max-width: 394px) {
+    .memory-card {
+        width: calc(33.333% - 10px);
+    }
+}
+
+@media screen and (max-height: 764px) {
+    .memory-game {
+        height: 470px;
+        width: 540px;
+    }
+}
+
+
+/* @media(max-height: 764px and max-width: 394){
+    .wrapper {
+        align-content: flex-start;
+    }
+} */
+
+@media screen and (max-height: 624px) {
+    .memory-game {
+        height: 280px;
+        width: 540px;
+    }
 }

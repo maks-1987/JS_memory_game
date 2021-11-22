@@ -48,4 +48,11 @@ function resetCards() {
     [firstCard, secondCard] = [null, null];
 }
 
+(function mixCards() {
+    cards.forEach(card => {
+        let position = Math.floor(Math.random() * 12);
+        card.style.order = position;
+    });
+})()
+
 cards.forEach(card => card.addEventListener('click', cardClicked));
