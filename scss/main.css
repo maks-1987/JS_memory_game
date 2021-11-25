@@ -6,15 +6,18 @@
 }
 
 .wrapper {
+  font-size: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 0px 5px;
   height: 100vh;
   background-color: #71db88;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -ms-flex-line-pack: start;
       align-content: flex-start;
+  position: relative;
 }
 
 .wrapper h1 {
@@ -29,9 +32,16 @@
   font-size: 24px;
 }
 
+.reset-btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  padding: 5px 5px 5px 5px;
+}
+
 .memory-game {
-  width: 700px;
-  height: 88vh;
+  width: 920px;
+  height: 86vh;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -42,15 +52,20 @@
           perspective: 1000px;
 }
 
+@media (orientation: landscape) {
+  .memory-game {
+    width: 70%;
+  }
+}
+
 .memory-card {
   width: calc(25% - 10px);
-  height: calc(33.333% - 10px);
   position: relative;
   margin: 5px;
-  -webkit-transition: scale 0.3s, -webkit-transform 0.3s;
-  transition: scale 0.3s, -webkit-transform 0.3s;
-  transition: transform 0.3s, scale 0.3s;
-  transition: transform 0.3s, scale 0.3s, -webkit-transform 0.3s;
+  -webkit-transition: scale 0.3s, -webkit-transform 0.1s;
+  transition: scale 0.3s, -webkit-transform 0.1s;
+  transition: transform 0.1s, scale 0.3s;
+  transition: transform 0.1s, scale 0.3s, -webkit-transform 0.1s;
   cursor: pointer;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
