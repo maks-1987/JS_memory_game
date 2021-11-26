@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  font-size: 24px;
+  display: flex;
+  padding: 0px 5px;
+  height: 100vh;
+  background-color: #71db88;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  position: relative;
+
+  h1 {
+    flex: 1 0 99.999%;
+    text-align: center;
+    align-self: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+}
+
+.reset-btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  padding: 5px 5px 5px 5px;
+}
+
+.memory-game {
+  width: 920px;
+  height: 86vh;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+
+  @media (orientation: landscape) {
+    width: 70%;
+  }
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  // height: calc(33.333% - 10px);
+  position: relative;
+  margin: 5px;
+  transition: transform 0.1s, scale 0.3s;
+  cursor: pointer;
+  transform-style: preserve-3d;
+
+  &__front-img,
+  &__back-img {
+    position: absolute;
+    background: #10b51b;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    backface-visibility: hidden;
+    /* border: 2px dotted #000000; */
+  }
+
+  &__back-img {
+    transform: rotateY(180deg);
+  }
+
+  @media screen and (max-width: 505px) {
+    width: calc(33.333% - 10px);
+  }
+}
+
+.memory-card:active {
+  transform: scale(0.95);
+  transition: transform 0.3s;
+}
+
+.memory-card.rotate {
+  transform: rotateY(180deg);
+  transition: transform 0.3s;
+}
+
+/* @media screen and (max-width: 700px) {
+  .memory-game {
+    height: 510px;
+  }
+} */
+
+/* @media screen and (max-width: 394px) {
+  .memory-card {
+    width: calc(33.333% - 10px);
+  }
+} */
+
+/* @media screen and (max-height: 624px) {
+  .memory-game {
+    height: 280px;
+    width: 540px;
+  }
+} */
+
+/* @media screen and (max-height: 764px) {
+  .memory-game {
+    height: 470px;
+    width: 540px;
+  }
+} */
+
+/* @media(max-height: 764px and max-width: 394){
+    .wrapper {
+        align-content: flex-start;
+    }
+} */

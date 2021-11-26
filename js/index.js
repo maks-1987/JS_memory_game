@@ -51,7 +51,7 @@ function resetCards() {
   [isRotate, lockCards] = [false, false];
   [firstCard, secondCard] = [null, null];
 }
-
+// mix card in random order
 mixCards();
 
 function mixCards() {
@@ -64,13 +64,11 @@ function mixCards() {
 function resetBoards() {
   mixCards();
   resetCards();
-
+  // rotate card & refresh events
   cards.forEach((card) => {
     card.classList.remove('rotate');
-    // card.addEventListener('click', cardClicked);
+    card.addEventListener('click', cardClicked);
   });
-
-  cards.forEach((card) => card.addEventListener('click', cardClicked));
 }
 
 cards.forEach((card) => card.addEventListener('click', cardClicked));
