@@ -12,7 +12,7 @@
   background-color: #71db88;
   flex-wrap: wrap;
   align-content: flex-start;
-  position: relative;
+  // position: relative;
 
   h1 {
     flex: 1 0 99.999%;
@@ -26,11 +26,12 @@
 .reset-btn {
   position: absolute;
   right: 5px;
-  top: 5px;
+  top: -32px;
   padding: 5px 5px 5px 5px;
 }
 
 .memory-game {
+  position: relative;
   width: 920px;
   height: 86vh;
   margin: 0 auto;
